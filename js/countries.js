@@ -14,15 +14,30 @@ const displayCountries = countries => {
 ;}
 
 const getCountriesHTML = country =>{
-    return `
-    <div class="country">
-        <img src=" ${country.flags.png}" />
-        <h2> ${country.name.common}</h2>
-       
-    </div>
 
+        // option 2 ( Destructuring )
+        const {name,flags} = country;
+        return `
+        <div class="country">
+            <img src=" ${flags.png}" />
+            <h2> ${name.common}</h2>
+        </div>
+        `
+    }
+
+/*--
+const getCountriesHTML = country =>{
+      return 
+      `
+      <div class="country">
+          <img src=" ${country.flags.png}" />
+          <h2> ${country.name.common}</h2>
+         
+      </div>      
     `
 }
+--*/
+
 
 
 loadCountries();
